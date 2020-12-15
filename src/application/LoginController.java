@@ -20,7 +20,7 @@ public class LoginController implements Initializable {
   //  private ComboBox<> fxComboBoxUsernames;
 
     @FXML
-    private Button fxButtonNewAccount;
+    private Butfton fxButtonNewAccount;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
