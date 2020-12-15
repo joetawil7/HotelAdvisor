@@ -48,13 +48,13 @@ public class DatabaseExecutor {
 		return creditCardNotUsed;
 	}
 
-	public ArrayList<Airport> findAirports(String searchTerm) {
+	/*public ArrayList<Airport> findAirports(String searchTerm) {
 		ArrayList<Airport> airports = new ArrayList<Airport>();
 
 		// Aufgabe c
 
 		return airports;
-	}
+	}*/
 
 	public ArrayList<Hotel> findHotels(String username, String city, int postalCode, String parking, String internet) {
 		ArrayList<Hotel> hotels = new ArrayList<Hotel>();
@@ -116,6 +116,6 @@ public class DatabaseExecutor {
 
 		// Aufgabe d
 
-		return userHotels;
+		return userHotel;
 	}
 }

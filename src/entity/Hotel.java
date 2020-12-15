@@ -150,8 +150,7 @@ public class Hotel {
         this.internet = internet;
     }
 
-    @java.lang.Override
-    public java.lang.String toString() {
+    public String toString() {
         return "Hotel{" +
                 "hotelId=" + hotelId +
                 ", hotelName='" + hotelName + '\'' +

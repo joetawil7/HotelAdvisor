@@ -30,8 +30,7 @@ public class Location {
         this.postalCode = postalCode;
     }
 
-    @java.lang.Override
-    public java.lang.String toString() {
+    public String toString() {
         return "Location{" +
                 "city='" + city + '\'' +
                 ", postalCode=" + postalCode +
