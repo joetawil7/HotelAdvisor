@@ -48,7 +48,7 @@ public class LoginController implements Initializable {
 
     private void login(User user) {
         GlobalService.getInstance().setLoggedInUser(user);
-        Main.changeToMainAppContainerScene();
+        Main.changeToMainAppViewScene();
     }
 
     @FXML

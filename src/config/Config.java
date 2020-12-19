@@ -11,7 +11,7 @@ public class Config {
             + FILE_SEPARATOR;
     public static final String LOGIN_FXML_PATH = "file:/" + FXML_DIR + "LoginView.fxml";
     public static final String SIGN_UP_FXML_PATH = "file:/" + FXML_DIR + "SignUpView.fxml";
-    public static final String Main_APP_CONTAINER_FXML_PATH = "file:/" + FXML_DIR + "MainAppContainerView.fxml";
+    public static final String MAIN_APP_FXML_PATH = "file:/" + FXML_DIR + "MainAppView.fxml";
     public static final String FIND_HOTEL_FXML_PATH = "file:/" + FXML_DIR + "FindHotelView.fxml";
-    public static final String MY_HOTELS_FXML_PATH = "file:/" + FXML_DIR + "MyHotelsView.fxml";
+    public static final String BOOKINGS_FXML_PATH = "file:/" + FXML_DIR + "BookingsView.fxml";
 }

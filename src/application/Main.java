@@ -62,4 +62,23 @@ public class Main extends Application {
         }
     }
 
+    public static void changeToMainAppViewScene() {
+        try {
+            Parent root = FXMLLoader.load(new URL(Config.MAIN_APP_FXML_PATH));
+            Main.mainScene.setRoot(root);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static Scene getMainScene() {
+        return mainScene;
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+
 }
