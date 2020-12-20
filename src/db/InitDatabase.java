@@ -3,6 +3,7 @@ package db;
 import config.Config;
 import io.CSVReader;
 
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -84,10 +85,9 @@ public class InitDatabase {
 
 		final String sql = "Create Table Hotel (" + "HotelId INTEGER NOT NULL PRIMARY KEY," + "Name TEXT NULL,"
 				+ "Address TEXT NOT NULL," + "PostalCode INTEGER NOT NULL," + "City TEXT NOT NULL,"
-				+ "PhoneNumber INTEGER NOT NULL," + "Email TEXT NOT NULL," + "Website TEXT NOT NULL,"
-				+ "Rooms INTEGER NOT NULL," + "Stars INTEGER NOT NULL," + "REVIEW REAL NOT NULL,"
-				+ "Price INTEGER NOT NULL," + "Parking TEXT NOT NULL," + "Internet TEXT NOT NULL," + "FOREIGN KEY(City) REFERENCES Location(City)" + " ON UPDATE CASCADE ON DELETE CASCADE,"
-				+ "FOREIGN KEY(PostalCode) REFERENCES Location(PostalCode)" + " ON UPDATE CASCADE ON DELETE CASCADE);";
+				+ "PhoneNumber BIGINT NOT NULL," + "Email TEXT NOT NULL," + "Website TEXT NOT NULL,"
+				+ "Rooms INTEGER NOT NULL," + "Stars INTEGER NOT NULL," + "Review REAL NOT NULL,"
+				+ "Price INTEGER NOT NULL," + "Parking TEXT NOT NULL," + "Internet TEXT NOT NULL);";
 		try (final Statement statement = Database.getConnection().createStatement();) {
 			statement.executeUpdate(sql);
 			System.out.println("Table Flight has been created.");
@@ -104,12 +104,24 @@ public class InitDatabase {
 		ArrayList<String[]> fileLines = csvReader.parseFile(file);
 
 		System.out.println("Number of lines read: " + fileLines.size());
-
-		int count = 0;
 		
 		// Aufgabe a
-		
-		System.out.println(count + " rows has been inserted into CreditCard table.");
+		final String sql = "INSERT INTO CreditCard(CardNumber, VIC, ExpiryDate, Balance) VALUES(?,?,?,?);";
+		try (PreparedStatement preparedStatement = Database.getConnection().prepareStatement(sql)) {
+			int count = 0;
+			for (String[] line : fileLines) {
+				preparedStatement.setString(1, line[0]);
+				preparedStatement.setInt(2, Integer.parseInt(line[1]));
+				preparedStatement.setString(3, line[2]);
+				preparedStatement.setFloat(4, Float.parseFloat(line[3]));
+
+				count += preparedStatement.executeUpdate();
+			}
+
+			System.out.println(count + " rows has been inserted into CreditCard table.");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 
 	private void fillLocationTable() {
@@ -120,27 +132,58 @@ public class InitDatabase {
 		ArrayList<String[]> fileLines = csvReader.parseFile(file);
 
 		System.out.println("Number of lines read: " + fileLines.size());
-
-		int count = 0;
 		
 		// Aufgabe a
-		
-		System.out.println(count + " rows has been inserted into Location table.");
+		final String sql = "INSERT INTO Location(City, PostalCode) VALUES(?,?);";
+		try (PreparedStatement preparedStatement = Database.getConnection().prepareStatement(sql)) {
+			int count = 0;
+			for (String[] line : fileLines) {
+				preparedStatement.setString(1, line[0]);
+				preparedStatement.setInt(2, Integer.parseInt(line[1]));
+				count += preparedStatement.executeUpdate();
+			}
+
+			System.out.println(count + " rows has been inserted into Location table.");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 
 	private void fillHotelTable() {
 		System.out.println("Reading hotels file...");
 
-		final String file = Config.RESOURCES_DIR + "HOTEL_DATABASE (1).csv";
+		final String file = Config.RESOURCES_DIR + "HOTEL_DATABASE.csv";
 		CSVReader csvReader = new CSVReader();
 		ArrayList<String[]> fileLines = csvReader.parseFile(file);
 
 		System.out.println("Number of lines read: " + fileLines.size());
 
-		int count = 0;
-		
 		// Aufgabe a
-		
-		System.out.println(count + " rows has been inserted into Hotel table.");
+		final String sql = "INSERT INTO Hotel(HotelId, Name, Address, PostalCode, City, PhoneNumber, Email, Website, Rooms, Stars, Review, Price, Parking, Internet) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
+		try (PreparedStatement preparedStatement = Database.getConnection().prepareStatement(sql)) {
+			int count = 0;
+			for (String[] line : fileLines) {
+				preparedStatement.setInt(1, Integer.parseInt(line[0]));
+				preparedStatement.setString(2, line[1]);
+				preparedStatement.setString(3, line[2]);
+				preparedStatement.setInt(4, Integer.parseInt(line[3]));
+				preparedStatement.setString(5, line[4]);
+				preparedStatement.setLong(6, Long.parseLong(line[5]));
+				preparedStatement.setString(7, line[6]);
+				preparedStatement.setString(8, line[7]);
+				preparedStatement.setInt(9, Integer.parseInt(line[8]));
+				preparedStatement.setInt(10, Integer.parseInt(line[9]));
+				preparedStatement.setFloat(11, Float.parseFloat(line[10]));
+				preparedStatement.setInt(12, Integer.parseInt(line[11]));
+				preparedStatement.setString(13, line[12]);
+				preparedStatement.setString(14, line[13]);
+
+				count += preparedStatement.executeUpdate();
+			}
+
+			System.out.println(count + " rows has been inserted into Hotel table.");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 }

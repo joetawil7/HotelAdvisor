@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="HotelBookingSystemDB" uuid="07b02303-dfda-4335-90f9-0f0802ef839e">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\George Tawil\.projects\HotelAdvisor\resources\HotelBookingSystemDB.db</jdbc-url>
+    </data-source>
+  </component>
+</project>

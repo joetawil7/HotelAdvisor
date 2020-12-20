@@ -54,15 +54,14 @@ public class FindHotelController implements Initializable {
 	@Override
 	public void initialize(URL url, ResourceBundle resourceBundle) {
 		this.databaseExecutor = new DatabaseExecutor();
-		this.disableDatePickerPastSelection();
-		this.initComboBoxes();
+	//	this.initComboBoxes();
 	}
 
 	public void setMainAppController(MainAppController mainAppController) {
 		this.mainAppController = mainAppController;
 	}
 
-	@FXML
+	/*@FXML
 	void onCityComboBoxKeyReleased(KeyEvent event) {
 		if (!event.isAltDown() && !event.isControlDown() && !event.isShiftDown()
 				&& (event.getCode().isLetterKey() || event.getCode() == KeyCode.BACK_SPACE)) {
@@ -73,9 +72,9 @@ public class FindHotelController implements Initializable {
 			this.fxComboBoxCity.getItems().addAll(airports);
 			this.fxComboBoxCity.show();
 		}
-	}
+	}+7
 
-	@FXML
+	/*@FXML
 	void onPostalCodeComboBoxKeyReleased(KeyEvent event) {
 		if (!event.isAltDown() && !event.isControlDown() && !event.isShiftDown()
 				&& (event.getCode().isLetterKey() || event.getCode() == KeyCode.BACK_SPACE)) {
@@ -86,9 +85,9 @@ public class FindHotelController implements Initializable {
 			this.fxComboBoxPostalCode.getItems().addAll(airports);
 			this.fxComboBoxPostalCode.show();
 		}
-	}
+	}*/
 
-	@FXML
+	/*@FXML
 	void onSearchButtonAction(ActionEvent event) {
 		this.fxListViewHotels.getItems().clear();
 		if (this.fxComboBoxCity.getValue() != null && this.fx.getValue() != null
@@ -103,9 +102,9 @@ public class FindHotelController implements Initializable {
 			
 			this.fxListViewHotels.getItems().addAll(flights);
 		}
-	}
+	}*/
 
-	@FXML
+	/*@FXML
 	void onBuyButtonAction(ActionEvent event) {
 		Flight selectedFlight = this.fxListViewHotels.getSelectionModel().getSelectedItem();
 
@@ -135,7 +134,7 @@ public class FindHotelController implements Initializable {
 				alert.showAndWait();
 			}
 		}
-	}
+	}*/
 
 	@FXML
 	void onBackButtonAction(ActionEvent event) {
@@ -147,24 +146,7 @@ public class FindHotelController implements Initializable {
 		}
 	}
 
-	private void disableDatePickerPastSelection() {
-		this.fxDatePickerOn.setDayCellFactory(new Callback<DatePicker, DateCell>() {
-
-			@Override
-			public DateCell call(DatePicker arg0) {
-				return new DateCell() {
-					@Override
-					public void updateItem(LocalDate date, boolean empty) {
-						super.updateItem(date, empty);
-						LocalDate today = LocalDate.now();
-						setDisable(empty || date.compareTo(today) < 0);
-					}
-				};
-			}
-		});
-	}
-
-	private void initComboBoxes() {
+	/*private void initComboBoxes() {
 		StringConverter<Airport> fromComboBoxStringConvertor = new StringConverter<Airport>() {
 			@Override
 			public String toString(Airport airport) {
@@ -191,7 +173,7 @@ public class FindHotelController implements Initializable {
 
 		this.fxComboBoxFrom.setConverter(fromComboBoxStringConvertor);
 		this.fxComboBoxTo.setConverter(toComboBoxStringConvertor);
-	}
+	}*/
 
 	@FXML
 	void onLogOutButtonAction(ActionEvent event) {

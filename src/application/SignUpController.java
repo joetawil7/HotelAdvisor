@@ -49,7 +49,7 @@ public class SignUpController implements Initializable {
     @FXML
     void onSignUpButtonAction(ActionEvent event) {
         try {
-            boolean success = this.databaseExecutor.insertUser(this.fxTextFieldUsername.getText(),
+            boolean success = this.databaseExecutor.insertUser(this.fxTestFieldName.getText(), this.fxTextFieldUsername.getText(),
                     this.fxTextFieldCardNumber.getText(), Integer.parseInt(this.fxTextFieldVIC.getText()),
                     this.fxTextFieldExpiryDate.getText());
             if (success) {

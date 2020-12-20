@@ -8,6 +8,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.SplitPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import service.GlobalService;
@@ -18,9 +19,6 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class MainAppController implements Initializable {
-
-	@FXML
-	private BorderPane fxSplitPane;
 
 	@FXML
 	private Label fxLabelUsername;

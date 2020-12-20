@@ -3,7 +3,7 @@ package config;
 public class Config {
     public static final int WINDOW_WIDTH = 800;
     public static final int WINDOW_HEIGHT = 600;
-    public static final String TITLE = "Hotel Booking";
+    public static final String TITLE = "Hotel Advisor";
     public static final String FILE_SEPARATOR = System.getProperty("file.separator");
     public static final String RESOURCES_DIR = System.getProperty("user.dir") + FILE_SEPARATOR + "resources"
             + FILE_SEPARATOR;

@@ -2,7 +2,6 @@ package application;
 
 import config.Config;
 import db.DatabaseExecutor;
-import entity.Flight;
 import entity.Hotel;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -27,9 +26,9 @@ public class BookingsController implements Initializable {
 	@Override
 	public void initialize(URL url, ResourceBundle resourceBundle) {
 		this.databaseExecutor = new DatabaseExecutor();
-		List<Hotel> hotels = this.databaseExecutor
-				.getUserFlights(GlobalService.getInstance().getLoggedInUser().getUsername());
-		this.fxListViewHotels.getItems().addAll(hotels);
+		//List<Hotel> hotels = this.databaseExecutor
+		//		.getUserFlights(GlobalService.getInstance().getLoggedInUser().getUsername());
+		// this.fxListViewHotels.getItems().addAll(hotels);
 	}
 
 	@FXML
