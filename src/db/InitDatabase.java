@@ -34,6 +34,7 @@ public class InitDatabase {
 		this.createCreditCardTable();
 		this.createLocationTable();
 		this.createHotelTable();
+		this.createUserHotelTable();
 		System.out.println("All tables have been created.");
 	}
 
@@ -91,6 +92,21 @@ public class InitDatabase {
 		try (final Statement statement = Database.getConnection().createStatement();) {
 			statement.executeUpdate(sql);
 			System.out.println("Table Flight has been created.");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+	private void createUserHotelTable() {
+		System.out.println("Creating UserHotel table...");
+
+		final String sql = "Create Table UserHotel(Username TEXT," + "HotelId INTEGER,"
+				+ "PRIMARY KEY(Username, HotelId),"
+				+ "FOREIGN KEY(Username) REFERENCES User(Username) ON UPDATE CASCADE ON DELETE CASCADE,"
+				+ "FOREIGN KEY(HotelId) REFERENCES Hotel(HotelId) ON UPDATE CASCADE ON DELETE CASCADE);";
+		try (final Statement statement = Database.getConnection().createStatement()) {
+			statement.executeUpdate(sql);
+			System.out.println("Table UserHotel has been created.");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

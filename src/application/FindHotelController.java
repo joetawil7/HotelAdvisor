@@ -29,6 +29,12 @@ import java.util.ResourceBundle;
 public class FindHotelController implements Initializable {
 
 	@FXML
+	private Label fxLabelUsername;
+
+	@FXML
+	private Label fxLabelBalance;
+
+	@FXML
 	private ComboBox<String> fxComboBoxCity;
 
 	@FXML
@@ -55,6 +61,9 @@ public class FindHotelController implements Initializable {
 	@Override
 	public void initialize(URL url, ResourceBundle resourceBundle) {
 		this.databaseExecutor = new DatabaseExecutor();
+		String loggedInUsername = GlobalService.getInstance().getLoggedInUser().getUsername() + "!";
+		this.fxLabelUsername.setText(loggedInUsername);
+		this.updateBalanceLabel();
 		try {
 			this.initComboBox();
 		} catch (SQLException e) {
@@ -79,7 +88,7 @@ public class FindHotelController implements Initializable {
 	}
 
 	@FXML
-	void onSearchButtonAction(ActionEvent event) {
+	void onSearchButtonAction(ActionEvent event) throws SQLException {
 		this.fxListViewHotels.getItems().clear();
 		if (this.fxComboBoxCity.getValue() != null && this.fxComboBoxPostalCode.getValue() != null) {
 			List<Hotel> flights = this.databaseExecutor.findHotels(
@@ -88,25 +97,25 @@ public class FindHotelController implements Initializable {
 		}
 	}
 
-	/*@FXML
-	void onBuyButtonAction(ActionEvent event) {
-		Flight selectedFlight = this.fxListViewHotels.getSelectionModel().getSelectedItem();
+	@FXML
+	void onBookButtonAction(ActionEvent event) {
+		Hotel selectedHotel = this.fxListViewHotels.getSelectionModel().getSelectedItem();
 
-		if (selectedFlight != null) {
+		if (selectedHotel != null) {
 			boolean success;
 			try {
-				success = this.databaseExecutor.buyFlight(GlobalService.getInstance().getLoggedInUser().getUsername(),
-						selectedFlight.getFlightId());
+				success = this.databaseExecutor.bookHotel(GlobalService.getInstance().getLoggedInUser().getUsername(),
+						selectedHotel.getHotelId());
 				if (success) {
 					CreditCard creditCard = GlobalService.getInstance().getLoggedInUser().getCreditCard();
-					creditCard.setBalance(creditCard.getBalance() - selectedFlight.getPrice());
-					this.mainAppController.updateBalanceLabel();
+					creditCard.setBalance(creditCard.getBalance() - selectedHotel.getPrice());
+					this.updateBalanceLabel();
 
 					this.fxListViewHotels.getItems().clear();
 					
 					Alert alert = new Alert(AlertType.INFORMATION);
 					alert.setTitle("Congratulation!");
-					alert.setHeaderText("Ticket has been bought successfully");
+					alert.setHeaderText("Hotel has been booked successfully");
 					alert.showAndWait();
 
 				}
@@ -118,7 +127,7 @@ public class FindHotelController implements Initializable {
 				alert.showAndWait();
 			}
 		}
-	}*/
+	}
 
 	@FXML
 	void onBackButtonAction(ActionEvent event) {
@@ -130,34 +139,6 @@ public class FindHotelController implements Initializable {
 		}
 	}
 
-	/*private void initComboBoxes() {
-		StringConverter<Airport> fromComboBoxStringConvertor = new StringConverter<Airport>() {
-			@Override
-			public String toString(Airport airport) {
-				return airport == null ? "" : airport.getName();
-			}
-
-			@Override
-			public Airport fromString(String string) {
-				return fxComboBoxFrom.getValue();
-			}
-		};
-
-		StringConverter<Airport> toComboBoxStringConvertor = new StringConverter<Airport>() {
-			@Override
-			public String toString(Airport airport) {
-				return airport == null ? "" : airport.getName();
-			}
-
-			@Override
-			public Airport fromString(String string) {
-				return fxComboBoxTo.getValue();
-			}
-		};
-
-		this.fxComboBoxFrom.setConverter(fromComboBoxStringConvertor);
-		this.fxComboBoxTo.setConverter(toComboBoxStringConvertor);
-	}*/
 
 	@FXML
 	void onLogOutButtonAction(ActionEvent event) {
@@ -165,7 +146,11 @@ public class FindHotelController implements Initializable {
 		Main.changeToLoginScene();
 	}
 
-	public void onBookButtonAction(ActionEvent actionEvent) {
+	public void updateBalanceLabel() {
+		String balance = String.format("%.2f",
+				GlobalService.getInstance().getLoggedInUser().getCreditCard().getBalance());
+		this.fxLabelBalance.setText(balance);
 	}
+
 
 }

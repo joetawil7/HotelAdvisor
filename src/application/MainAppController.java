@@ -39,7 +39,7 @@ public class MainAppController implements Initializable {
 	public void initialize(URL url, ResourceBundle resourceBundle) {
 		String loggedInUsername = GlobalService.getInstance().getLoggedInUser().getUsername() + "!";
 		this.fxLabelUsername.setText(loggedInUsername);
-		this.updateBalanceLabel();
+		updateBalanceLabel();
 	}
 
 	public void updateBalanceLabel() {
