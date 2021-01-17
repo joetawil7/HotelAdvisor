@@ -8,13 +8,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.SplitPane;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.Pane;
 import service.GlobalService;
 
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -53,8 +49,6 @@ public class MainAppController implements Initializable {
 		try {
 			Parent root = FXMLLoader.load(new URL(Config.FIND_HOTEL_FXML_PATH));
 			Main.getMainScene().setRoot(root);
-		//	FindHotelController findHotelController = (FindHotelController) fxmlLoader.getController();
-		//	findHotelController.setMainAppController(this);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

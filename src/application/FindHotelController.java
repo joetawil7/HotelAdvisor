@@ -4,7 +4,6 @@ import config.Config;
 import db.DatabaseExecutor;
 import entity.CreditCard;
 import entity.Hotel;
-import entity.Location;
 import exceptions.NoEnoughBalanceException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -13,16 +12,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.control.Alert.AlertType;
-import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
-import javafx.util.Callback;
-import javafx.util.StringConverter;
 import service.GlobalService;
 
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
-import java.time.LocalDate;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -91,9 +85,9 @@ public class FindHotelController implements Initializable {
 	void onSearchButtonAction(ActionEvent event) throws SQLException {
 		this.fxListViewHotels.getItems().clear();
 		if (this.fxComboBoxCity.getValue() != null && this.fxComboBoxPostalCode.getValue() != null) {
-			List<Hotel> flights = this.databaseExecutor.findHotels(
+			List<Hotel> hotels = this.databaseExecutor.findHotels(
 					GlobalService.getInstance().getLoggedInUser().getUsername(), this.fxComboBoxCity.getSelectionModel().getSelectedItem(), this.fxComboBoxPostalCode.getSelectionModel().getSelectedItem(), this.fxCheckBoxParking.isSelected() ? "JA" : null, this.fxCheckBoxInternet.isSelected() ? "JA" : null);
-			this.fxListViewHotels.getItems().addAll(flights);
+			this.fxListViewHotels.getItems().addAll(hotels);
 		}
 	}
 

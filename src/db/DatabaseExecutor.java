@@ -44,6 +44,7 @@ public class DatabaseExecutor {
 		boolean success = false;
 
 		// Aufgabe b
+
 		if (!this.isUsernameValid(username)) {
 			throw new InvalidUsernameException();
 		} else if (!this.isCreditCardValid(cardNumber, vic, expiryDate)) {
@@ -138,7 +139,7 @@ public class DatabaseExecutor {
 		ArrayList<String> cities = new ArrayList<String>();
 
 		// Aufgabe c
-		final String sql = "SELECT DISTINCT City FROM Location ORDER BY City ASC;";
+		final String sql = "SELECT DISTINCT City FROM Location ORDER BY City;";
 
 		try (PreparedStatement preparedStatement = Database.getConnection().prepareStatement(sql)) {
 			ResultSet resultSet = preparedStatement.executeQuery();

@@ -91,7 +91,7 @@ public class InitDatabase {
 				+ "Price INTEGER NOT NULL," + "Parking TEXT NOT NULL," + "Internet TEXT NOT NULL);";
 		try (final Statement statement = Database.getConnection().createStatement();) {
 			statement.executeUpdate(sql);
-			System.out.println("Table Flight has been created.");
+			System.out.println("Table Hotel has been created.");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
