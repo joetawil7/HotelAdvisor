@@ -151,21 +151,18 @@ public class Hotel {
     }
 
     public String toString() {
-        return "Hotel{" +
-                "hotelId=" + hotelId +
-                ", hotelName='" + hotelName + '\'' +
-                ", address='" + address + '\'' +
-                ", postalCode=" + postalCode +
-                ", city='" + city + '\'' +
-                ", phoneNumber=" + phoneNumber +
-                ", email='" + email + '\'' +
-                ", website='" + website + '\'' +
-                ", freeRooms=" + freeRooms +
-                ", stars=" + stars +
-                ", review=" + review +
-                ", price=" + price +
-                ", parking='" + parking + '\'' +
-                ", internet='" + internet + '\'' +
-                '}';
+        return hotelName + ", " +
+                address + ", " +
+                postalCode + ", " +
+                city + ", " +
+                "+49" + phoneNumber + ", " +
+                email + ", " +
+                website +
+                ", Free Rooms= " +freeRooms +
+                ", Stars= " +stars +
+                ", Review= " + review +
+                ", Price= " + price + "$" +
+                ", parking='" + parking.toLowerCase() + '\'' +
+                ", internet='" + internet.toLowerCase() + '\'';
     }
 }

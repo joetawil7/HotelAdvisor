@@ -1,10 +1,10 @@
 ID,NAME,ADDRESS,POSTAL CODE,CITY,PHONE,EMAIL ADDRESS,WEBSITE,ROOMS,STARS,REVIEW,PRICE,PARKING,INTERNET
 30368645,Hotel Am Schloss Ahrensburg,Am Alten Markt 17,22926,Ahrensburg,4941028055,info@hotel-am-schloss.de,https://www.hotel-am-schloss.de/,78,3,8.3,113,NEIN,NEIN
-30397304,Hotel Whitman,Plaener Chaussee 21,24326,Ascheberg,49452633900,info@hotel-whitman.de,https://designhotel-whitman.de/,56,4,7.6,166,JA,JA
+30397304,Hotel Whitman,Plaener Chaussee 21,24326,Ascheberg,49452633900,info@hotel-whitman.de,https://designhotel-whitman.de/,56,4,7.6,166,JA,NEIN
 30388514,Kunzmann's Hotel | Spa,An der Promenade 6,97708,Bad Bocklet,499708780,willkommen@kunzmanns.de,http://www.kunzmanns.de/,65,4,8.8,217,JA,JA
 30397255,Hotel Seeblick,Pelham 4,83093,Bad Endorf,4980533090,info@hotel-seeblick-pelham.de,http://www.hotel-seeblick-pelham.de/,60,3,8.4,140,NEIN,NEIN
 30372806,Best Western Premier Park Hotel & Spa,Peter-Hartmann-Allee 4,33175,Bad Lippspringe,4952529630,info@parkhotel-lippspringe.de,http://www.parkhotel-lippspringe.de/,135,4,8.6,183,JA,JA
-30372807,Best Western Premier Parkhotel Bad Mergentheim,Lothar-Daiker-Strasse 6,97980,Bad Mergentheim,4979315390,info@parkhotel-mergentheim.bestwestern.de,http://www.parkhotel-mergentheim.de/,116,4,8.2,162,JA,JA
+30372807,Best Western Premier Parkhotel Bad Mergentheim,Lothar-Daiker-Strasse 6,97980,Bad Mergentheim,4979315390,info@parkhotel-mergentheim.bestwestern.de,http://www.parkhotel-mergentheim.de/,116,4,8.2,162,JA,NEIN
 30388433,Kulturhotel Fuerst Pueckler Park,Schlossstr. 8,2953,Bad Muskau,49357715330,info@kulturhotel-fuerst-pueckler-park.de,http://www.kulturhotel-fuerst-pueckler-park.de/,101,4,8,141,NEIN,JA
 30399358,Good Morning + Bad Oldesloe,Sandkamp 12,23843,Bad Oldesloe,49453189300,badoldesloe@gmorninghotels.de,https://ligula.se,142,3,6.8,66,NEIN,NEIN
 30372789,Best Western Plus Hotel Ostertor,Osterstr. 52-54,32105,Bad Salzuflen,4910352161,info@ostertor.bestwestern.de,http://www.hotel-ostertor.com/,72,4,8.6,137,NEIN,NEIN
@@ -20,18 +20,18 @@ ID,NAME,ADDRESS,POSTAL CODE,CITY,PHONE,EMAIL ADDRESS,WEBSITE,ROOMS,STARS,REVIEW,
 30390831,Berlin Marriott Hotel,Inge-Beisheim-Platz 1,10785,Berlin,4930220000,berlin@marriotthotels.com,http://www.marriott.com/hotels/travel/bermc-berlin-marriott-hotel/,379,5,9,339,JA,JA
 30382805,Grand Hyatt Berlin,Marlene-Dietrich-Platz 2,10785,Berlin,493000000000,hyattplace@hyatt.com,www.hyatt.com,342,5,9,501,JA,JA
 30386667,Palace Berlin,Budapester Str. 45,10787,Berlin,493025020,hotel@palace.de,http://www.palace.de/,278,5,9.1,275,JA,JA
-30382790,Grand City Hotel Berlin East,Landsberger Allee 203,13055,Berlin,4930978080,info@berlin-east-grandcityhotels.com,http://www.hotel-berlin-east.com/,317,4,7,159,JA,JA
-30394562,Holiday Inn Berlin City-East Landsberger Allee,Landsberger Allee 203,13055,Berlin,4930978080,info@hibce.de,http://www.ihg.com/holidayinn/hotels/us/en/berlin/,156,4,6.9,160,JA,JA
-30373220,Hotel am Borsigturm,Am Borsigturm 1,13507,Berlin,493000000000,info@hotel-am-borsigturm.de,http://www.hotel-am-borsigturm.de/,105,4,8.6,169,JA,JA
+30382790,Grand City Hotel Berlin East,Landsberger Allee 203,13055,Berlin,4930978080,info@berlin-east-grandcityhotels.com,http://www.hotel-berlin-east.com/,317,4,7,159,NEIN,JA
+30394562,Holiday Inn Berlin City-East Landsberger Allee,Landsberger Allee 203,13055,Berlin,4930978080,info@hibce.de,http://www.ihg.com/holidayinn/hotels/us/en/berlin/,156,4,6.9,160,JA,NEIN
+30373220,Hotel am Borsigturm,Am Borsigturm 1,13507,Berlin,493000000000,info@hotel-am-borsigturm.de,http://www.hotel-am-borsigturm.de/,105,4,8.6,169,NEIN,JA
 30386968,Iberotel Boltenhagen,Baltische Allee 1,23946,Boltenhagen,49388253840,info@iberotelboltenhagen.de,http://www.iberotel.de/iberotel-boltenhagen-ostsee-deutschland.html,191,4,8.5,197,JA,JA
 30390768,Maritim Hotel Bremen,Hollerallee 99,28215,Bremen,4942137890,info.bre@maritim.de,https://www.maritim.de/de/hotels/deutschland/hotel-bremen/uebersicht,261,4,8.1,146,NEIN,NEIN
 30374412,Comfort Hotel Bremerhaven,Am Schaufenster 7,27572,Bremerhaven,4947193200,info@comfort-hotel-bremerhaven.de,http://www.comfort-hotel-bremerhaven.de/,120,4,8.2,134,NEIN,JA
-30398144,Steigenberger Hotel Deidesheim,Am Paradiesgarten 1,67146,Deidesheim,4963269700,deidesheim@steigenberger.de,https://www.steigenberger.com,123,4,7.2,153,JA,JA
-30392455,Ostseehotel Dierhagen,Wiesenweg 1,18347,Dierhagen,4938226510,info@ostseehotel-dierhagen.de,http://www.ostseehotel-dierhagen.de/,162,3,8.6,159,JA,JA
+30398144,Steigenberger Hotel Deidesheim,Am Paradiesgarten 1,67146,Deidesheim,4963269700,deidesheim@steigenberger.de,https://www.steigenberger.com,123,4,7.2,153,NEIN,JA
+30392455,Ostseehotel Dierhagen,Wiesenweg 1,18347,Dierhagen,4938226510,info@ostseehotel-dierhagen.de,http://www.ostseehotel-dierhagen.de/,162,3,8.6,159,JA,NEIN
 30394329,Best Western Plazahotel Stuttgart-Ditzingen,Stettiner Strasse 27,71254,Ditzingen,4971569620,info@plazahotel-ditzingen.bestwestern.de,http://www.plazahotel-ditzingen.bestwestern.de/,120,4,7.5,214,JA,JA
 30398135,Steigenberger Hotel de Saxe,Neumarkt 9,1067,Dresden,4935143860,reservations@desaxe-dresden.steigenberger.de,https://www.steigenberger.com/hotels/alle-hotels/deutschland/dresden/,185,4,9,149,JA,JA
 30386790,Hotel Taschenbergpalais Kempinski,Taschenberg 3,1067,Dresden,4935149120,reservations.taschenbergpalais@kempinski.com,http://www.kempinski.com/dresden,214,5,9.2,208,JA,JA
-30368769,Hotel Am Terrassenufer,Terrassenufer 12,1069,Dresden,494000000000,hat@hotel-terrassenufer.de,http://www.hotel-terrassenufer.de/,196,4,8.4,167,JA,JA
+30368769,Hotel Am Terrassenufer,Terrassenufer 12,1069,Dresden,494000000000,hat@hotel-terrassenufer.de,http://www.hotel-terrassenufer.de/,196,4,8.4,167,NEIN,JA
 30374414,Best Western Macrander Hotel Dresden,Buchenstr. 10,1097,Dresden,494000000000,info@macrander-dresden.bestwestern.de,http://www.best-western-dresden.de/,85,4,8.1,85,NEIN,NEIN
 30373468,Buelow Palais,Koenigsstr. 14,1097,Dresden,4935180030,info.palais@buelow-hotels.de,https://www.buelow-palais.de/luxushotel-dresden/,58,5,9.5,191,JA,JA
 30391057,Park Inn by Radisson Dresden,Melanchthonstr. 2,1099,Dresden,4935180610,dresden@proventhotels.com,http://www.pi-dresden.de/,132,3,8,111,NEIN,JA
@@ -41,16 +41,16 @@ ID,NAME,ADDRESS,POSTAL CODE,CITY,PHONE,EMAIL ADDRESS,WEBSITE,ROOMS,STARS,REVIEW,
 30372793,Best Western Plus Parkhotel Erding,Am Bahnhof 3,85435,Erding,4981224990,info@parkhotel-erding.bestwestern.de,http://www.parkhotel-erding.bestwestern.de/,64,4,8.8,144,NEIN,NEIN
 30372815,Best Western Premier Hotel Victoria,Eisenbahnstrasse 54,79098,Freiburg im Breisgau,49761207340,info@victoria.bestwestern.de,http://www.victoria.bestwestern.de/,66,4,8.9,185,JA,JA
 30386661,Best Western Premier Obermuehle,Muehlstr. 22,82467,Garmisch-Partenkirchen,4988217040,welcome@hotel-obermuehle.de,http://www.hotel-obermuehle.de/,85,4,8.7,312,JA,JA
-30374872,Der Lindenhof,Schoene Aussicht 5,99867,Gotha,4936217720,info@der-lindenhof-gotha.de,http://www.lindenhof.bestwestern.de/,90,4,8.6,156,JA,JA
+30374872,Der Lindenhof,Schoene Aussicht 5,99867,Gotha,4936217720,info@der-lindenhof-gotha.de,http://www.lindenhof.bestwestern.de/,90,4,8.6,156,NEIN,JA
 30373642,Best Western Premier Alsterkrug Hotel,Alsterkrugchaussee 277,22297,Hamburg,4940513030,info@alsterkrug.de,http://www.alsterkrug-hotel.de/,105,4,8.4,169,JA,JA
 30390370,Lindner Park-Hotel Hagenbeck,Hagenbeckstr. 150,22527,Hamburg,4940000000000,restaurant.hagenbeck@lindner.de,http://www.lindner.de/hamburg-park-hotel-hagenbeck/ankommen.html,158,4,8.6,227,JA,JA
 30386590,Hotel Louis C. Jacob,Elbchaussee 401-403,22609,Hamburg,4940822550,reservierung@hotel-jacob.de,http://www.hotel-jacob.de/,85,5,9,434,JA,JA
 30383233,Courtyard by Marriott Hannover Maschsee,Arthur-Menge-Ufer 3,30169,Hannover,49511366000,sales.hannover@baum-hotels.de,www.marriott.com,149,4,8.8,277,JA,JA
 30372751,Best Western Hotel Der Foehrenhof,Kirchhorster Strasse 22,30659,Hannover,4951161540,info@foehrenhof.bestwestern.de,http://www.hotel-foehrenhof-hannover.de/,78,3,8.2,209,JA,JA
-30372763,Best Western Kastell,Kastellstrasse 64,74080,Heilbronn,497000000000,info@kastell.bestwestern.de,http://www.kastell.bestwestern.de/,92,3,7.6,122,JA,JA
+30372763,Best Western Kastell,Kastellstrasse 64,74080,Heilbronn,497000000000,info@kastell.bestwestern.de,http://www.kastell.bestwestern.de/,92,3,7.6,122,JA,NEIN
 30401922,Wyndham Garden Hennigsdorf Berlin,Fontanestr. 110,16761,Hennigsdorf,4933028750,hotelsales@wyndhamworldwide.com,http://www.wyndhamhotelgroup.de,112,4,7.4,84,NEIN,NEIN
 30392694,Parkhotel Adler,Adlerplatz 3,79856,Hinterzarten,4976521270,info@parkhoteladler.de,http://www.parkhoteladler.de/,56,5,9.2,469,JA,JA
-30385128,Ringhotel Hohe Wacht,Ostseering 5,24321,Hohwacht,49438190080,HoheWacht@ringhotels.de,http://www.hohe-wacht.de/,89,4,8.3,161,JA,JA
+30385128,Ringhotel Hohe Wacht,Ostseering 5,24321,Hohwacht,49438190080,HoheWacht@ringhotels.de,http://www.hohe-wacht.de/,89,4,8.3,161,JA,NEIN
 30389661,Dreiklang Business & Spa Resort,Norderstrasse 6,24568,Kaltenkirchen,4941919210,info@hotel-dreiklang.de,http://www.hotel-dreiklang.de/,60,4,8,118,NEIN,NEIN
 30390763,Maritim Hotel Bellevue Kiel,Bismarckallee 2,24105,Kiel,4943138940,info@maritim.de,https://www.maritim.de,89,4,7.8,152,JA,JA
 30396815,Schlosshotel Kronberg,Hainstrasse 25,61476,Kronberg im Taunus,49617370101,info@schlosshotel-kronberg.de,http://www.schlosshotel-kronberg.de/,62,5,9.3,368,JA,JA
@@ -60,7 +60,7 @@ ID,NAME,ADDRESS,POSTAL CODE,CITY,PHONE,EMAIL ADDRESS,WEBSITE,ROOMS,STARS,REVIEW,
 30372813,Best Western Plus Steubenhof Hotel,Steubenstrasse 66,68199,Mannheim,49621819100,info@steubenhof.bestwestern.de,http://www.steubenhof-hotel.de/,84,4,8.4,162,JA,JA
 30394997,Hotel Rennsteig,Am Badehaus 1,98666,Masserberg,493687080,info@hotel-rennsteig.com,http://www.hotel-rennsteig.com/,92,4,8,147,NEIN,NEIN
 30397085,Romantik Hotel Schwanefeld,Schwanefelder Strasse 22,8393,Meerane,4937644050,info@schwanefeld.de,http://www.schwanefeld.de/,50,4,8,142,NEIN,NEIN
-30372159,Best Western Premier Bayerischer Hof Miesbach,Oskar-von-Miller Str. 2-4,83714,Miesbach,4980252880,info@bayerischerhof.bestwestern.de,http://www.bayerischerhof.bestwestern.de/,134,4,8.4,151,JA,JA
+30372159,Best Western Premier Bayerischer Hof Miesbach,Oskar-von-Miller Str. 2-4,83714,Miesbach,4980252880,info@bayerischerhof.bestwestern.de,http://www.bayerischerhof.bestwestern.de/,134,4,8.4,151,NEIN,JA
 30375667,Derag Livinghotel Prinzessin Elisabeth,Geyerstr. 52,80469,Munich,4989720170,res.pe@derag.de,https://www.deraghotels.de/hotel-prinzessin-elisabeth-muenchen/,142,4,8.3,482,JA,JA
 30391146,Novotel Muenchen Messe,Willy-Brandt-Platz 1,81829,Munich,4989994000,h5563@accor.com,www.accor.com,278,4,8.3,272,JA,JA
 30367342,Airport & Seminarhotel,An der Gehespitz 85,63263,Neu Isenburg,4960000000000,Info@airport-seminarhotel.de,http://www.airport-seminarhotel.de/,77,3,7.5,236,JA,JA
@@ -85,16 +85,16 @@ ID,NAME,ADDRESS,POSTAL CODE,CITY,PHONE,EMAIL ADDRESS,WEBSITE,ROOMS,STARS,REVIEW,
 30372802,ambassador hotel & spa,Im Bad 26,25826,Sankt Peter-Ording,4948637090,info@hotel-ambassador.de,http://www.hotel-ambassador.de/,90,4,8.3,244,JA,JA
 30372208,Bayside,Strandallee 130a,23683,Scharbeutz,49450360960,info@bayside-hotel.de,www.bayside-hotel.de,132,4,8.9,272,JA,JA
 30368255,PLAZA Schwerin,Bleicher Ufer 23,19053,Schwerin,4938557550,bankett@schwerin.plazahotels.de,https://plazahotels.de/,100,4,7.8,138,NEIN,NEIN
-30397310,Best Western Seehotel Frankenhorst,Frankenhorst 5,19055,Schwerin,4932536278,info@seehotel.bestwestern.de,http://www.seehotel.bestwestern.de/,59,4,8.4,136,JA,JA
+30397310,Best Western Seehotel Frankenhorst,Frankenhorst 5,19055,Schwerin,4932536278,info@seehotel.bestwestern.de,http://www.seehotel.bestwestern.de/,59,4,8.4,136,NEIN,JA
 30386418,Althoff Hotel am Schlossgarten,Schillerstr. 23,70173,Stuttgart,4971120260,anfrage@hotelschlossgarten.com,http://www.hotelschlossgarten.com/,106,5,8.6,287,JA,JA
 30386190,Holiday Inn Stuttgart,Mittlerer Pfad 25-27,70499,Stuttgart,49711988880,hotel@holidayinn-stuttgart.de,http://www.ihg.com/holidayinn/hotels/us/en/stuttgart/,320,4,8,212,JA,JA
 30391114,Mercure Hotel Stuttgart Airport Messe,Eichwiesenring 1/1,70567,Stuttgart,4971172660,H1574@accor.com,www.accor.com,148,4,8,197,JA,JA
 30374504,Country Hotel Timmendorfer Strand,Strandallee 136-140,23669,Timmendorfer Strand,4945038080,info@countryhotel-tdf.com,www.countryhotel-tdf.de,99,4,8.3,186,JA,JA
 30395711,Hotel Villa Gropius,Strandallee 50,23669,Timmendorfer Strand,495000000000,info@villa-gropius.de,http://www.villa-gropius.de/,51,4,8,180,JA,JA
-30395997,Ringhotel Moench`s Waldhotel,Kapfenhardter Muehle. Zu den Muehlen 2,75399,Unterreichenbach,4972357900,MoenchsWaldhotel@ringhotels.de,http://www.moenchs-waldhotel.de/,65,4,8.4,174,JA,JA
+30395997,Ringhotel Moench`s Waldhotel,Kapfenhardter Muehle. Zu den Muehlen 2,75399,Unterreichenbach,4972357900,MoenchsWaldhotel@ringhotels.de,http://www.moenchs-waldhotel.de/,65,4,8.4,174,JA,NEIN
 30382832,Waldhotel Wandlitz,Bernauer Chaussee 28,16348,Wandlitz,49333976690,info@waldhotelwandlitz.de,http://www.waldhotelwandlitz.de/,75,4,8,62,NEIN,JA
 30401344,Weissenhaus Grand Village,Parkallee 1,23758,Wangels,49438292620,info@weissenhaus.de,http://www.weissenhaus.de/,62,5,9.4,663,JA,JA
-30396392,Best Western Premier Grand Hotel Russischer Hof,Goetheplatz 2,99423,Weimar,4936437740,info@russischerhof.bestwestern.de,http://www.russischerhof-weimar.de/,126,4,9,167,JA,JA
+30396392,Best Western Premier Grand Hotel Russischer Hof,Goetheplatz 2,99423,Weimar,4936437740,info@russischerhof.bestwestern.de,http://www.russischerhof-weimar.de/,126,4,9,167,JA,NEIN
 30390378,Lindner Strand Hotel Windrose,Strandstr. 19,25996,Wenningstedt,4946519400,info@lindner.de,http://www.lindner.de,91,4,7.9,294,JA,JA
 30401600,Best Western Plus Hotel Willingen,Briloner Strasse 54,34508,Willingen,49563296900,info@hotel-willingen.bestwestern.de,http://www.hotel-willingen.bestwestern.de/,67,4,8.7,193,JA,JA
 30396004,Ringhotel Residenz Wittmund,Am Markt 13-15,26409,Wittmund,4944628860,info@residenz-wittmund.de,http://www.residenz-wittmund.de/,50,4,8.3,133,NEIN,NEIN

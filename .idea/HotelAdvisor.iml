@@ -11,5 +11,44 @@
     <orderEntry type="library" exported="" name="jdom-2.0.6" level="application" />
     <orderEntry type="library" exported="" name="javafx11" level="application" />
     <orderEntry type="library" exported="" name="lib" level="project" />
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="file://C:/Program Files/Java/javafx-sdk-11.0.2" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/resources/sqlite-jdbc-3.27.2.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="library" exported="" name="lib1" level="project" />
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES />
+        <JAVADOC />
+        <NATIVE>
+          <root url="file://C:/Program Files/Java/javafx-sdk-11.0.2/bin" />
+        </NATIVE>
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="library" exported="" name="bin" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/annotations-18.0.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>

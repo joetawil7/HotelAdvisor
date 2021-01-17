@@ -2,17 +2,21 @@ package db;
 
 import entity.CreditCard;
 import entity.Hotel;
+import entity.Location;
 import entity.User;
 import exceptions.CardInUseException;
 import exceptions.InvalidCardException;
 import exceptions.InvalidUsernameException;
 import exceptions.NoEnoughBalanceException;
+import org.jetbrains.annotations.Nullable;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Optional;
 
 public class DatabaseExecutor {
 
@@ -26,7 +30,7 @@ public class DatabaseExecutor {
 			while (resultSet.next()) {
 				String username = resultSet.getString("Username");
 				String cardNumber = resultSet.getString("CardNumber");
-				double balance = resultSet.getFloat("Balance");
+				int balance = resultSet.getInt("Balance");
 
 				CreditCard creditCard = new CreditCard(cardNumber, balance);
 				User user = new User(username, creditCard);
@@ -133,19 +137,147 @@ public class DatabaseExecutor {
 		return creditCardNotUsed;
 	}
 
-	/*public ArrayList<Airport> findAirports(String searchTerm) {
-		ArrayList<Airport> airports = new ArrayList<Airport>();
+	public ArrayList<String> showCities() throws SQLException {
+		ArrayList<String> cities = new ArrayList<String>();
 
 		// Aufgabe c
+		final String sql = "SELECT DISTINCT City FROM Location ORDER BY City ASC;";
 
-		return airports;
-	}*/
+		try (PreparedStatement preparedStatement = Database.getConnection().prepareStatement(sql)) {
+			ResultSet resultSet = preparedStatement.executeQuery();
+			while (resultSet.next()){
+				String city = resultSet.getString("City");
+				cities.add(city);
+			}
+		}
 
-	public ArrayList<Hotel> findHotels(String username, String city, int postalCode, String parking, String internet) {
+		return cities;
+	}
+
+	public ArrayList<Integer> showPostalCode(String city) throws SQLException {
+		ArrayList<Integer> postalCodes = new ArrayList<>();
+
+		// Aufgabe c
+		final String sql = "SELECT PostalCode FROM Location WHERE City = ? ORDER BY PostalCode;";
+
+		try (PreparedStatement preparedStatement = Database.getConnection().prepareStatement(sql)) {
+			preparedStatement.setString(1, city);
+			ResultSet resultSet = preparedStatement.executeQuery();
+			while (resultSet.next()){
+				Integer postalCode = resultSet.getInt("PostalCode");
+				postalCodes.add(postalCode);
+			}
+		}
+
+		return postalCodes;
+	}
+
+	public ArrayList<Hotel> findHotels(String username, String city, int postalCode, @Nullable String parking, @Nullable String internet) {
 		ArrayList<Hotel> hotels = new ArrayList<Hotel>();
+		DecimalFormat df = new DecimalFormat("0.0");
 
 		// Aufgabe c
-		
+		if(parking == null && internet == null) {
+			final String sql = "SELECT HotelId,Name,Address,PhoneNumber,Email,Website,Rooms,Stars,Review,Price,Parking,Internet FROM Hotel WHERE City = ? AND PostalCode = ? AND Parking = ? AND Internet = ? ORDER BY Price;";
+			try (PreparedStatement preparedStatement = Database.getConnection().prepareStatement(sql)) {
+				preparedStatement.setString(1, city);
+				preparedStatement.setInt(2, postalCode);
+				if(parking == null){
+
+				}
+				ResultSet resultSet = preparedStatement.executeQuery();
+				while (resultSet.next()){
+					int hotelId = resultSet.getInt("HotelId");
+					String name = resultSet.getString("Name");
+					String address = resultSet.getString("Address");
+					int phoneNumber = resultSet.getInt("PhoneNumber");
+					String email = resultSet.getString("Email");
+					String website = resultSet.getString("Website");
+					int rooms = resultSet.getInt("Rooms");
+					int stars = resultSet.getInt("Stars");
+					double review = Math.round(resultSet.getDouble("Review") * 100.0) / 100.0;
+					int price = resultSet.getInt("Price");
+					String parking2 = resultSet.getString("Parking");
+					String internet2 = resultSet.getString("Internet");
+					Hotel newHotel = new Hotel(hotelId, name, address, postalCode, city, phoneNumber, email, website, rooms, stars, review, price, parking2, internet2);
+					hotels.add(newHotel);
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}else if(parking != null && internet == null){
+			final String sql = "SELECT HotelId,Name,Address,PhoneNumber,Email,Website,Rooms,Stars,Review,Price,Parking,Internet FROM Hotel WHERE Parking = ? ORDER BY Price;";
+			try (PreparedStatement preparedStatement = Database.getConnection().prepareStatement(sql)) {
+				preparedStatement.setString(1, "JA");
+				ResultSet resultSet = preparedStatement.executeQuery();
+				while (resultSet.next()){
+					int hotelId = resultSet.getInt("HotelId");
+					String name = resultSet.getString("Name");
+					String address = resultSet.getString("Address");
+					int phoneNumber = resultSet.getInt("PhoneNumber");
+					String email = resultSet.getString("Email");
+					String website = resultSet.getString("Website");
+					int rooms = resultSet.getInt("Rooms");
+					int stars = resultSet.getInt("Stars");
+					double review = Math.round(resultSet.getDouble("Review") * 100.0) / 100.0;
+					int price = resultSet.getInt("Price");
+					String internet2 = resultSet.getString("Internet");
+					Hotel newHotel = new Hotel(hotelId, name, address, postalCode, city, phoneNumber, email, website, rooms, stars, review, price, "JA", internet2);
+					hotels.add(newHotel);
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}else if(parking != null && internet != null){
+			final String sql = "SELECT HotelId,Name,Address,PhoneNumber,Email,Website,Rooms,Stars,Review,Price,Parking,Internet FROM Hotel WHERE Parking = ? AND Internet = ? ORDER BY Price;";
+			try (PreparedStatement preparedStatement = Database.getConnection().prepareStatement(sql)) {
+				preparedStatement.setString(1, "JA");
+				preparedStatement.setString(2, "JA");
+				ResultSet resultSet = preparedStatement.executeQuery();
+				while (resultSet.next()){
+					int hotelId = resultSet.getInt("HotelId");
+					String name = resultSet.getString("Name");
+					String address = resultSet.getString("Address");
+					int phoneNumber = resultSet.getInt("PhoneNumber");
+					String email = resultSet.getString("Email");
+					String website = resultSet.getString("Website");
+					int rooms = resultSet.getInt("Rooms");
+					int stars = resultSet.getInt("Stars");
+					double review = Math.round(resultSet.getDouble("Review") * 100.0) / 100.0;
+					int price = resultSet.getInt("Price");
+					Hotel newHotel = new Hotel(hotelId, name, address, postalCode, city, phoneNumber, email, website, rooms, stars, review, price, "JA", "JA");
+					hotels.add(newHotel);
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}else{
+			final String sql = "SELECT HotelId,Name,Address,PhoneNumber,Email,Website,Rooms,Stars,Review,Price,Parking,Internet FROM Hotel WHERE Internet = ? ORDER BY Price;";
+			try (PreparedStatement preparedStatement = Database.getConnection().prepareStatement(sql)) {
+				preparedStatement.setString(1, "JA");
+				ResultSet resultSet = preparedStatement.executeQuery();
+				while (resultSet.next()){
+					int hotelId = resultSet.getInt("HotelId");
+					String name = resultSet.getString("Name");
+					String address = resultSet.getString("Address");
+					int phoneNumber = resultSet.getInt("PhoneNumber");
+					String email = resultSet.getString("Email");
+					String website = resultSet.getString("Website");
+					int rooms = resultSet.getInt("Rooms");
+					int stars = resultSet.getInt("Stars");
+					double review = Math.round(resultSet.getDouble("Review") * 100.0) / 100.0;
+					int price = resultSet.getInt("Price");
+					String parking2 = resultSet.getString("Parking");
+					Hotel newHotel = new Hotel(hotelId, name, address, postalCode, city, phoneNumber, email, website, rooms, stars, review, price, parking2, "JA");
+					hotels.add(newHotel);
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+
+
+
 		return hotels;
 	}
 
@@ -177,7 +309,7 @@ public class DatabaseExecutor {
 
 		// Aufgabe d
 		final String sql = "UPDATE CreditCard "
-				+ "SET Balance = Balance - (SELECT Price FROM Flight WHERE FlightId = ?) "
+				+ "SET Balance = Balance - (SELECT Price FROM Hotel WHERE HotelId = ?) "
 				+ "WHERE CardNumber = (SELECT CardNumber FROM User WHERE username = ?);";
 
 		try (PreparedStatement preparedStatement = Database.getConnection().prepareStatement(sql)) {
@@ -195,7 +327,7 @@ public class DatabaseExecutor {
 		boolean success = false;
 		
 		// Aufgabe d
-		final String sql = "UPDATE Flight SET FreeRooms = FreeRooms - 1 WHERE hotelId = ?";
+		final String sql = "UPDATE Hotel SET Rooms = Rooms - 1 WHERE hotelId = ?";
 
 		try (PreparedStatement preparedStatement = Database.getConnection().prepareStatement(sql)) {
 			preparedStatement.setInt(1, hotelId);
@@ -213,7 +345,7 @@ public class DatabaseExecutor {
 		// Aufgabe d
 		final String sql = "Select "
 				+ "(Select Balance FROM User INNER JOIN CreditCard on User.cardnumber = CreditCard.cardnumber "
-				+ "WHERE username = ?) >= " + "(SELECT Price FROM Flight WHERE FlightId = ?);";
+				+ "WHERE username = ?) >= " + "(SELECT Price FROM Hotel WHERE HotelId = ?);";
 
 		try (PreparedStatement preparedStatement = Database.getConnection().prepareStatement(sql)) {
 			preparedStatement.setString(1, username);

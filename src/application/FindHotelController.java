@@ -21,6 +21,7 @@ import service.GlobalService;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -28,10 +29,10 @@ import java.util.ResourceBundle;
 public class FindHotelController implements Initializable {
 
 	@FXML
-	private ComboBox<Location> fxComboBoxCity;
+	private ComboBox<String> fxComboBoxCity;
 
 	@FXML
-	private ComboBox<Location> fxComboBoxPostalCode;
+	private ComboBox<Integer> fxComboBoxPostalCode;
 
 	@FXML
 	private CheckBox fxCheckBoxParking;
@@ -54,55 +55,38 @@ public class FindHotelController implements Initializable {
 	@Override
 	public void initialize(URL url, ResourceBundle resourceBundle) {
 		this.databaseExecutor = new DatabaseExecutor();
-	//	this.initComboBoxes();
+		try {
+			this.initComboBox();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public void setMainAppController(MainAppController mainAppController) {
 		this.mainAppController = mainAppController;
 	}
 
-	/*@FXML
-	void onCityComboBoxKeyReleased(KeyEvent event) {
-		if (!event.isAltDown() && !event.isControlDown() && !event.isShiftDown()
-				&& (event.getCode().isLetterKey() || event.getCode() == KeyCode.BACK_SPACE)) {
-			this.fxComboBoxCity.hide();
-			this.fxComboBoxCity.getItems().clear();
-			String searchTerm = this.fxComboBoxCity.getEditor().getText();
-			List<Location> airports = this.databaseExecutor.find(searchTerm);
-			this.fxComboBoxCity.getItems().addAll(airports);
-			this.fxComboBoxCity.show();
-		}
-	}+7
+	void initComboBox() throws SQLException {
+		List<String> cities = this.databaseExecutor.showCities();
+		this.fxComboBoxCity.getItems().addAll(cities);
+	}
 
-	/*@FXML
-	void onPostalCodeComboBoxKeyReleased(KeyEvent event) {
-		if (!event.isAltDown() && !event.isControlDown() && !event.isShiftDown()
-				&& (event.getCode().isLetterKey() || event.getCode() == KeyCode.BACK_SPACE)) {
-			this.fxComboBoxPostalCode.hide();
-			this.fxComboBoxPostalCode.getItems().clear();
-			String searchTerm = this.fxComboBoxPostalCode.getEditor().getText();
-			List<Location> airports = this.databaseExecutor.findAirports(searchTerm);
-			this.fxComboBoxPostalCode.getItems().addAll(airports);
-			this.fxComboBoxPostalCode.show();
-		}
-	}*/
+	@FXML
+	void fxOnActionComboBoxCity(ActionEvent actionEvent) throws SQLException {
+		this.fxComboBoxPostalCode.getItems().clear();
+		List<Integer> postalCodes = this.databaseExecutor.showPostalCode(this.fxComboBoxCity.getSelectionModel().getSelectedItem());
+		this.fxComboBoxPostalCode.getItems().addAll(postalCodes);
+	}
 
-	/*@FXML
+	@FXML
 	void onSearchButtonAction(ActionEvent event) {
 		this.fxListViewHotels.getItems().clear();
-		if (this.fxComboBoxCity.getValue() != null && this.fx.getValue() != null
-				&& this.fxDatePickerOn.getValue() != null) {
-			String from = this.fxComboBoxFrom.getSelectionModel().getSelectedItem().getCode();
-			String to = this.fxComboBoxTo.getSelectionModel().getSelectedItem().getCode();
-			int month = this.fxDatePickerOn.getValue().getMonthValue();
-			int dayOfMonth = this.fxDatePickerOn.getValue().getDayOfMonth();
-			
+		if (this.fxComboBoxCity.getValue() != null && this.fxComboBoxPostalCode.getValue() != null) {
 			List<Hotel> flights = this.databaseExecutor.findHotels(
-					GlobalService.getInstance().getLoggedInUser().getUsername(), from, to, month, dayOfMonth);
-			
+					GlobalService.getInstance().getLoggedInUser().getUsername(), this.fxComboBoxCity.getSelectionModel().getSelectedItem(), this.fxComboBoxPostalCode.getSelectionModel().getSelectedItem(), this.fxCheckBoxParking.isSelected() ? "JA" : null, this.fxCheckBoxInternet.isSelected() ? "JA" : null);
 			this.fxListViewHotels.getItems().addAll(flights);
 		}
-	}*/
+	}
 
 	/*@FXML
 	void onBuyButtonAction(ActionEvent event) {
@@ -180,4 +164,8 @@ public class FindHotelController implements Initializable {
 		GlobalService.getInstance().setLoggedInUser(null);
 		Main.changeToLoginScene();
 	}
+
+	public void onBookButtonAction(ActionEvent actionEvent) {
+	}
+
 }

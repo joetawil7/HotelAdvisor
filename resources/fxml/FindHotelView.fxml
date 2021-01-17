@@ -74,8 +74,8 @@
                               <Font name="Aldhabi" size="38.0" />
                            </font>
                         </Label>
-                        <ComboBox fx:id="fxComboBoxCity" layoutX="194.0" layoutY="14.0" onKeyReleased="#onCityComboBoxKeyReleased" prefWidth="150.0" />
-                        <ComboBox fx:id="fxComboBoxPostalCode" layoutX="603.0" layoutY="14.0" onKeyReleased="#onPostalCodeComboBoxKeyReleased" prefWidth="150.0" />
+                        <ComboBox fx:id="fxComboBoxCity" layoutX="194.0" layoutY="14.0" onAction="#fxOnActionComboBoxCity" prefWidth="150.0" />
+                        <ComboBox fx:id="fxComboBoxPostalCode" layoutX="603.0" layoutY="14.0" prefWidth="150.0" />
                         <Label layoutX="121.0" layoutY="13.0" text="City" textFill="WHITE">
                            <font>
                               <Font name="Microsoft Tai Le" size="20.0" />

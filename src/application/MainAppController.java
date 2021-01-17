@@ -51,10 +51,10 @@ public class MainAppController implements Initializable {
 	@FXML
 	void onFindHotelButtonAction(ActionEvent event) {
 		try {
-			FXMLLoader fxmlLoader = new FXMLLoader(new URL(Config.FIND_HOTEL_FXML_PATH));
-			Main.getMainScene().setRoot(fxmlLoader.getRoot());
-			FindHotelController findHotelController = (FindHotelController) fxmlLoader.getController();
-			findHotelController.setMainAppController(this);
+			Parent root = FXMLLoader.load(new URL(Config.FIND_HOTEL_FXML_PATH));
+			Main.getMainScene().setRoot(root);
+		//	FindHotelController findHotelController = (FindHotelController) fxmlLoader.getController();
+		//	findHotelController.setMainAppController(this);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
