@@ -85,8 +85,7 @@ public class FindHotelController implements Initializable {
 	void onSearchButtonAction(ActionEvent event) throws SQLException {
 		this.fxListViewHotels.getItems().clear();
 		if (this.fxComboBoxCity.getValue() != null && this.fxComboBoxPostalCode.getValue() != null) {
-			List<Hotel> hotels = this.databaseExecutor.findHotels(
-					GlobalService.getInstance().getLoggedInUser().getUsername(), this.fxComboBoxCity.getSelectionModel().getSelectedItem(), this.fxComboBoxPostalCode.getSelectionModel().getSelectedItem(), this.fxCheckBoxParking.isSelected() ? "JA" : null, this.fxCheckBoxInternet.isSelected() ? "JA" : null);
+			List<Hotel> hotels = this.databaseExecutor.findHotels(this.fxComboBoxCity.getSelectionModel().getSelectedItem(), this.fxComboBoxPostalCode.getSelectionModel().getSelectedItem(), this.fxCheckBoxParking.isSelected() ? "JA" : null, this.fxCheckBoxInternet.isSelected() ? "JA" : null);
 			this.fxListViewHotels.getItems().addAll(hotels);
 		}
 	}

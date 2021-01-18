@@ -170,7 +170,7 @@ public class DatabaseExecutor {
 		return postalCodes;
 	}
 
-	public ArrayList<Hotel> findHotels(String username, String city, int postalCode, String parking, String internet) throws SQLException {
+	public ArrayList<Hotel> findHotels(String city, int postalCode, String parking, String internet) throws SQLException {
 		ArrayList<Hotel> hotels = new ArrayList<Hotel>();
 		DecimalFormat df = new DecimalFormat("0.0");
 		int k = 0;
